@@ -1,0 +1,11 @@
+Pruebas del motor de Reflota (imagenes de disco sinteticas; NO reemplazan probar con discos reales).
+
+Se corren con Python 3 desde cualquier carpeta, por ejemplo:   python tests/test_fat16.py
+Cada script imprime OK / FALLA por comprobacion y termina con "FALLOS: ninguno" (o "TODO OK").
+Usan la carpeta temporal del sistema (no escriben en el repositorio) y encuentran reflota.py solos
+(../reflota.py respecto de cada script).
+
+Requisitos: solo la biblioteca estandar, salvo:
+  - Pillow (pip install pillow) para test_dec.py, test_frag*.py y test_carve_jpeg_frag.py
+  - fake_tk.py simula tkinter para probar la logica de la ventana sin pantalla (test_gui_*.py);
+    NO prueba el aspecto ni la distribucion real de la ventana (para eso hay que abrirla).
